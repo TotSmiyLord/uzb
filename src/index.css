@@ -1,13 +1,225 @@
-body {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (min-width: 600px) {
+  header {
+    display: hidden;
+  }
+}
+
+.boto {
+  border-radius: 48px 48px 0px 0px;
+  background-color: #24ab7115;
+}
+
+@media (max-width: 600px) {
+  .boto {
+    width: 300px; /* уменьшаем ширину на 2 раза */
+    height: 360px; /* уменьшаем высоту на 2 раза */
+    border-radius: 48px 48px 48px 48px;
+  }
+}
+
+.blur-container {
+  position: fixed;
+  bottom: 4px;
+  width: 90%;
+  border-radius: 20px;
+  background-color: rgba(129, 125, 125, 0.5);
+  backdrop-filter: blur(10px);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blur-cont {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    /* Стили для карусели */
+  }
+
+  .text-start {
+    text-align: center; /* Центрируем текст на маленьких экранах */
+  }
+}
+
+.blur-objecting {
+  background-color: rgba(93, 91, 91, 0.5);
+  backdrop-filter: blur(10px);
+}
+.blur-contents {
+  background-color: #24ab7115;
+  backdrop-filter: blur(10px);
+  height: auto;
+}
+
+.custom-style {
+  width: 150px;
+  height: 30px;
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.custom-input {
+  border: none;
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  width: 150px;
+  height: 30px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+.custom-inputcom {
+  border: none;
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+.custom-inputt {
+  border: none;
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+.custom-inputcomp {
+  border: none;
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+.bortderr {
+  border: 2px solid rgba(55, 165, 96, 0.704);
+  border-radius: 10px;
+  height: 40px;
+}
+
+.goo {
+  background-color: #24ab7115;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 600px) {
+  .uzb {
+    background: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .goo {
+    background: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .uzbek {
+    background: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .uzbeki {
+    background: white;
+  }
+}
+
+.cont{
+    position: relative;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.cont:hover .image {
+  opacity: 0.3;
+}
+
+.cont:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #84dcc0;
+  color: #fff;
+  font-size: 16px;
+  padding: 16px 32px;
 }
