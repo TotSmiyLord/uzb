@@ -22,9 +22,7 @@ const MidlHome = () => {
             </h1>
           </div>
           <div className=" pt-10 md:flex justify-between">
-            <br />
-            <br />
-            <br />
+            
             <Link to="/rooms">
               <div
                 className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px] bg-[#DDDDDD] rounded-xl   cont"
@@ -42,9 +40,7 @@ const MidlHome = () => {
                 </div>
               </div>
             </Link>
-            <br />
-            <br />
-            <br />
+            
             <Link to="/rooms">
               <div
                 className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]   bg-[#DDDDDD] rounded-xl  cont"
@@ -62,9 +58,7 @@ const MidlHome = () => {
                 </div>
               </div>
             </Link>
-            <br />
-            <br />
-            <br />
+            
             <Link to="/rooms">
               <div
                 className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]  bg-[#DDDDDD] rounded-xl   cont"
