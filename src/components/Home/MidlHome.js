@@ -24,7 +24,7 @@ const MidlHome = () => {
           <div className=" pt-10 md:flex justify-between">
             <Link to="/rooms">
               <div
-                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px] bg-[#DDDDDD] rounded-xl mt-5 cont"
+                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px] bg-[#DDDDDD] rounded-xl  mt-[50px] cont"
                 data-aos="fade-up-right"
                 data-aos-duration="1000"
               >
@@ -41,7 +41,7 @@ const MidlHome = () => {
             </Link>
             <Link to="/rooms">
               <div
-                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]   bg-[#DDDDDD] rounded-xl mt-5 cont"
+                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]   bg-[#DDDDDD] rounded-xl mt-[50px] cont"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
@@ -58,7 +58,7 @@ const MidlHome = () => {
             </Link>
             <Link to="/rooms">
               <div
-                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]  bg-[#DDDDDD] rounded-xl mt-5 cont"
+                className="inline-block md:w-[200px] md:h-[250px] w-[300px] h-[350px] lg:w-[411px] lg:h-[480px]  bg-[#DDDDDD] rounded-xl  mt-[50px] cont"
                 data-aos="fade-up-left"
                 data-aos-duration="1000"
               >
