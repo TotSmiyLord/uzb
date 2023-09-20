@@ -37,60 +37,62 @@ const AdminPage = () => {
           className="flex justify-center items-center"
           style={{ paddingTop: "20%", paddingBottom: "20%" }}
         >
-          <div
-            className="md:w-[500px] w-[300px] rounded-xl blur-contents"
-            style={{ margin: "0 auto" }}
-          >
-            <div className="flex justify-center">
-              <div className="text-lg font-seans font-semibold text-center">
-                <br />
-                <h1>Kirish faqat administrator uchun </h1>
-                <h1>Вход только для администратора</h1>
-              </div>
-            </div>
-            <div className=" justify-center md:w-[500px] ">
-              <div className="flex justify-center ">
-                <div>
-                  <div className="  ">
-                    <span className="font-bold text-gray-800 flex justify-center ">
-                      Ism/Имя
-                    </span>
-                    <input
-                      name="text"
-                      placeholder="Yozing/Напишите"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="custom-inputcomp flex justify-center "
-                    ></input>
-                    <div className=" mt-5 flex justify-center ">
-                      <h1>Kod/Код</h1>
-                    </div>
-                    <input
-                      type="password"
-                      name="kod"
-                      placeholder="kod"
-                      value={code}
-                      onChange={(e) => setCode(e.target.value)}
-                      className="custom-inputt flex justify-center"
-                    ></input>
-                  </div>
+          <div className="md:w-[500px] w-[330px] rounded-xl blur-contents">
+            <div
+              className="md:w-[500px] w-[300px] "
+              style={{ margin: "0 auto" }}
+            >
+              <div className="flex justify-center">
+                <div className="text-lg font-seans font-semibold text-center">
+                  <br />
+                  <h1>Kirish faqat administrator uchun </h1>
+                  <h1>Вход только для администратора</h1>
                 </div>
               </div>
-              <div className="flex justify-center mt-4">
-                <button
-                  className={`px-4 py-2 text-white font-semibold rounded hover:bg-blue-700 ${
-                    !name || !code
-                      ? "disabled bg-gray-300 cursor-not-allowed"
-                      : "bg-blue-500"
-                  }`}
-                  onClick={handleLogin}
-                  disabled={!name || !code}
-                >
-                  Kirish/Вход
-                </button>
+              <div className=" justify-center md:w-[500px] ">
+                <div className="flex justify-center ">
+                  <div>
+                    <div className="  ">
+                      <span className="font-bold text-gray-800 flex justify-center ">
+                        Ism/Имя
+                      </span>
+                      <input
+                        name="text"
+                        placeholder="Yozing/Напишите"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="custom-inputcomp flex justify-center "
+                      ></input>
+                      <div className=" mt-5 flex justify-center ">
+                        <h1>Kod/Код</h1>
+                      </div>
+                      <input
+                        type="password"
+                        name="kod"
+                        placeholder="kod"
+                        value={code}
+                        onChange={(e) => setCode(e.target.value)}
+                        className="custom-inputt flex justify-center"
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center mt-4">
+                  <button
+                    className={`px-4 py-2 text-white font-semibold rounded hover:bg-blue-700 ${
+                      !name || !code
+                        ? "disabled bg-gray-300 cursor-not-allowed"
+                        : "bg-blue-500"
+                    }`}
+                    onClick={handleLogin}
+                    disabled={!name || !code}
+                  >
+                    Kirish/Вход
+                  </button>
+                </div>
+                <br />
+                <br />
               </div>
-              <br />
-              <br />
             </div>
           </div>
         </div>
