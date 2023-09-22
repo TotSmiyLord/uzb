@@ -90,7 +90,7 @@ Tel: ${tel}
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
- const handleOchirishClick = () => {
+  const handleOchirishClick = () => {
     setKattalar(1);
     setTel("");
     setHona(1);
@@ -250,7 +250,6 @@ Tel: ${tel}
                         placeholder="+998"
                         onChange={(e) => setTel(e.target.value)}
                         className="custom-input"
-                        
                       />
                     </div>
                   </div>
@@ -268,19 +267,6 @@ Tel: ${tel}
                     >
                       Jonatish/Отправить
                     </button>
-                    {showModal && (
-                      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <div className="bg-white p-6 rounded">
-                          <p className="text-center">
-                            Ваш заказ принят. В скором времени мы вам ответим.
-                          </p>
-                          <hr />
-                          <div className="flex justify-center">
-                            <button onClick={handleOchirishClick}>Ok</button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                   <br />
                   <br />
@@ -289,6 +275,24 @@ Tel: ${tel}
             </div>
           </div>
         </div>
+        {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center bl">
+            <div className="bg-white p-4 rounded-xl w-[300px] md:w-[500px]">
+              <p className="text-center">
+                Ваш заказ принят. В скором времени мы вам ответим.
+              </p>
+              <hr />
+              <div className="flex justify-center">
+                <button
+                  onClick={handleOchirishClick}
+                  className="w-[300px] md:w-[500px] h-10"
+                >
+                  Ok
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="mt-20">
           <HomeEnd />
         </div>

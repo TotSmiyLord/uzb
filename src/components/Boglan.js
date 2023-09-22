@@ -98,19 +98,6 @@ Tel: ${tel}
                   >
                     Jonatish/Отправить
                   </button>
-                  {showModal && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                      <div className="bg-white p-6 rounded">
-                        <p className="text-center">
-                          Ваш заказ принят. В скором времени мы вам ответим.
-                        </p>
-                        <hr />
-                        <div className="flex justify-center">
-                          <button onClick={handleOchirClick}>Ok</button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
                 <br />
                 <br />
@@ -118,7 +105,25 @@ Tel: ${tel}
             </div>
           </div>
         </div>
-        <div className="mt-20">
+        {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center bl">
+            <div className="bg-white p-4 rounded-xl w-[300px] md:w-[500px]">
+              <p className="text-center">
+                Ваш заказ принят. В скором времени мы вам ответим.
+              </p>
+              <hr />
+              <div className="flex justify-center">
+                <button
+                  onClick={handleOchirClick}
+                  className="w-[300px] md:w-[500px] h-10"
+                >
+                  Ok
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="mt-20 relative">
           <HomeEnd />
         </div>
       </div>

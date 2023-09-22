@@ -106,7 +106,7 @@ const AdminPage = () => {
           </div>
         </div>
         {modalVisible && (
-          <div className="fixed flex justify-center items-center top-0 bottom-0 left-0 right-0 bg-gray-500 bg-opacity-50 z-50">
+          <div className="fixed flex justify-center items-center top-0 bottom-0 left-0 right-0 bg-gray-500 bg-opacity-50 z-50 bl">
             <div className="bg-white p-4 rounded-xl">
               <h1 className="text-lg font-semibold mb-2">
                 Kod notog'ri/Неверный код
@@ -114,12 +114,16 @@ const AdminPage = () => {
               <p className="text-gray-700">
                 Kirishda xatolik yuz berdi!/Ошибка при входе!
               </p>
-              <button
-                className="px-4 py-2 mt-4 text-white bg-blue-500 font-semibold rounded hover:bg-blue-700"
-                onClick={() => setModalVisible(false)}
-              >
-                Yopish/Закрыть
-              </button>
+              
+              <hr />
+              <div className="flex justify-center">
+                <button
+                  className="w-[300px] md:w-[500px] h-10 font-semibold"
+                  onClick={() => setModalVisible(false)}
+                >
+                  Yopish/Закрыть
+                </button>
+              </div>
             </div>
           </div>
         )}

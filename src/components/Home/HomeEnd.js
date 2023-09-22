@@ -8,7 +8,7 @@ const HomeEnd = () => {
   };
 
   return (
-    <div className="">
+    <div className="relative">
       <div className="flex justify-center ">
         <div className="md:flex justify-center bg-white rounded goo md:w-[1280px] w-[300px]">
           <div className="md:flex justify-between  md:w-[500px] w-[300px]">
