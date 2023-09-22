@@ -115,7 +115,7 @@ Tel: ${tel}
               <div className="flex justify-center">
                 <button
                   onClick={handleOchirClick}
-                  className="w-[300px] md:w-[500px] h-10"
+                  className="w-[300px] md:w-[500px] h-10 font-semibold"
                 >
                   Ok
                 </button>

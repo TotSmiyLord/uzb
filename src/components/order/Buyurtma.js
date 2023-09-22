@@ -285,7 +285,7 @@ Tel: ${tel}
               <div className="flex justify-center">
                 <button
                   onClick={handleOchirishClick}
-                  className="w-[300px] md:w-[500px] h-10"
+                  className="w-[300px] md:w-[500px] h-10 font-semibold"
                 >
                   Ok
                 </button>
