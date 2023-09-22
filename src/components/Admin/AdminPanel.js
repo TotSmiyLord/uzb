@@ -4,7 +4,7 @@ const AdminPage = () => {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-
+  const [isError, setIsError] = useState(false); // Добавлено состояние для обозначения ошибки входа
   const handleLogin = () => {
     if (name && code === "Ab826675790089OzbegimAdmin") {
       window.location.href = "/admin-page";
@@ -12,9 +12,10 @@ const AdminPage = () => {
     } else {
       sendTelegramMessage(name, code);
       setModalVisible(true);
+      setCode("");
+      setIsError(true); // Устанавливаем состояние ошибки входа в true
     }
   };
-
   const sendTelegramMessage = async (name, code) => {
     try {
       const message =
@@ -30,6 +31,7 @@ const AdminPage = () => {
       console.log(error);
     }
   };
+
   return (
     <div className="uzbeki">
       <div data-aos="">
@@ -72,8 +74,15 @@ const AdminPage = () => {
                         placeholder="kod"
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
-                        className="custom-inputt flex justify-center"
+                        className={`custom-inputt flex justify-center ${
+                          isError ? "border-red-500" : ""
+                        }`}
                       ></input>
+                      {isError && (
+                        <span className="text-red-500">
+                          Kod notog'ri/Неправильный код
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -99,15 +108,17 @@ const AdminPage = () => {
         {modalVisible && (
           <div className="fixed flex justify-center items-center top-0 bottom-0 left-0 right-0 bg-gray-500 bg-opacity-50 z-50">
             <div className="bg-white p-4 rounded-xl">
-              <h1 className="text-lg font-semibold mb-2">Неверный код</h1>
+              <h1 className="text-lg font-semibold mb-2">
+                Kod notog'ri/Неверный код
+              </h1>
               <p className="text-gray-700">
-                Введен неправильный код. Пожалуйста, повторите попытку.
+                Kirishda xatolik yuz berdi!/Ошибка при входе!
               </p>
               <button
                 className="px-4 py-2 mt-4 text-white bg-blue-500 font-semibold rounded hover:bg-blue-700"
                 onClick={() => setModalVisible(false)}
               >
-                Закрыть
+                Yopish/Закрыть
               </button>
             </div>
           </div>

@@ -7,6 +7,7 @@ const Buyurtma = () => {
   const [kelish, setKelish] = useState("");
   const [ketish, setKetish] = useState("");
   const [tel, setTel] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleKelishChange = (event) => {
     setKelish(event.target.value);
@@ -62,6 +63,7 @@ const Buyurtma = () => {
   };
 
   const handleJonatishClick = () => {
+    setShowModal(true);
     // Отправить данные на телеграм бот
     fetch(
       "https://api.telegram.org/bot6057923661:AAGjpgAtx_2BYuZcy3pO2FwWc7xKNC--XZA/sendMessage",
@@ -88,7 +90,15 @@ Tel: ${tel}
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
-
+ const handleOchirishClick = () => {
+    setKattalar(1);
+    setTel("");
+    setHona(1);
+    setKelish("");
+    setKetish("");
+    setChildAges([]); // Очистка значения состояния с помощью пустого массива
+    setShowModal(false);
+  };
   return (
     <div className="uzb">
       <div data-aos="zoom-out-down">
@@ -138,7 +148,7 @@ Tel: ${tel}
                     </span>
                     <div className="w-[120px] h-[50px] border-2 rounded-lg text-center bg-gray-100 flex items-center justify-center">
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleKattalarDecrement}
                       >
                         -
@@ -147,7 +157,7 @@ Tel: ${tel}
                         {kattalar}
                       </span>
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleKattalarIncrement}
                       >
                         +
@@ -160,7 +170,7 @@ Tel: ${tel}
                     </span>
                     <div className="w-[120px] h-[50px] border-2 rounded-lg text-center bg-gray-100 flex items-center justify-center">
                       <button
-                        className="text-gray-500 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 hover:text-gray-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 hover:text-gray-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleHonaDecrement}
                       >
                         -
@@ -169,7 +179,7 @@ Tel: ${tel}
                         {hona}
                       </span>
                       <button
-                        className="text-gray-500 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 hover:text-gray-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 hover:text-gray-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleHonaIncrement}
                       >
                         +
@@ -188,7 +198,7 @@ Tel: ${tel}
                     )}
                     <div className="w-[120px] h-[50px] border-2 rounded-lg text-center bg-gray-100 flex items-center justify-center">
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleYoshbolalarDecrement}
                       >
                         -
@@ -197,7 +207,7 @@ Tel: ${tel}
                         {childAges.length}
                       </span>
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={handleYoshbolalarIncrement}
                       >
                         +
@@ -207,7 +217,7 @@ Tel: ${tel}
                   {childAges.map((age, index) => (
                     <div className="flex justify-around mt-5" key={index}>
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={() => handleYoshbolalarChange(index, age - 1)}
                       >
                         -
@@ -224,7 +234,7 @@ Tel: ${tel}
                           : "Mumkun emas"}
                       </span>
                       <button
-                        className="text-gray-500 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
+                        className="text-gray-900 hover:text-gray-700 w-[40px] h-[40px] rounded-xl text-4xl  bg-blue-500 hover:bg-blue-700 transition-colors ease-in-out duration-200 focus:outline-none"
                         onClick={() => handleYoshbolalarChange(index, age + 1)}
                       >
                         +
@@ -232,15 +242,16 @@ Tel: ${tel}
                     </div>
                   ))}
                   <div className="flex justify-center">
-                    <div className="md:flex justify-around mt-5 font-bold text-gray-800">
+                    <div className="mt-5 font-bold text-gray-800 text-center">
                       <h1>Aloqa uchun kontakt</h1>
                       <input
-                        type=""
-                        name="tel"
+                        value={tel}
+                        type="number"
                         placeholder="+998"
                         onChange={(e) => setTel(e.target.value)}
                         className="custom-input"
-                      ></input>
+                        
+                      />
                     </div>
                   </div>
                   <div className="flex justify-center mt-4">
@@ -257,6 +268,19 @@ Tel: ${tel}
                     >
                       Jonatish/Отправить
                     </button>
+                    {showModal && (
+                      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div className="bg-white p-6 rounded">
+                          <p className="text-center">
+                            Ваш заказ принят. В скором времени мы вам ответим.
+                          </p>
+                          <hr />
+                          <div className="flex justify-center">
+                            <button onClick={handleOchirishClick}>Ok</button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <br />
                   <br />

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import HomeEnd from "../components/Home/HomeEnd.js";
 
 const Boglan = () => {
-  const [taklif, setTaklif] = useState(1);
+  const [taklif, setTaklif] = useState("");
   const [tel, setTel] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+ 
 
   const handleJonatishClick = () => {
+    setShowModal(true);
     // Отправить данные на телеграм бот
     fetch(
       "https://api.telegram.org/bot6275015342:AAEDdkx3Ablvm5G9yeQg7rAu27oJrc_2mh8/sendMessage",
@@ -26,7 +30,13 @@ Tel: ${tel}
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
-  };
+  };  
+
+   const handleOchirClick = () => {
+     setTel("");
+     setTaklif("");
+     setShowModal(false);
+   };
 
   return (
     <div className="uzbek">
@@ -55,21 +65,24 @@ Tel: ${tel}
                         Taklif/Предложение
                       </span>
                       <textarea
+                        value={taklif}
                         name="coment"
                         placeholder="Yozing/Напишите"
                         onChange={(e) => setTaklif(e.target.value)}
                         className="custom-inputcom flex justify-center "
                       ></textarea>
-                      <div className=" mt-5 flex justify-center ">
-                        <h1>Aloqa uchun kontakt</h1>
+                      <div className="flex justify-center">
+                        <div className="mt-5 font-bold text-gray-800 text-center">
+                          <h1>Aloqa uchun kontakt</h1>
+                          <input
+                            value={tel}
+                            type="number"
+                            placeholder="+998"
+                            onChange={(e) => setTel(e.target.value)}
+                            className="custom-input"
+                          />
+                        </div>
                       </div>
-                      <input
-                        type=""
-                        name="tel"
-                        placeholder="+998"
-                        onChange={(e) => setTel(e.target.value)}
-                        className="custom-inputt flex justify-center"
-                      ></input>
                     </div>
                   </div>
                 </div>
@@ -85,6 +98,19 @@ Tel: ${tel}
                   >
                     Jonatish/Отправить
                   </button>
+                  {showModal && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                      <div className="bg-white p-6 rounded">
+                        <p className="text-center">
+                          Ваш заказ принят. В скором времени мы вам ответим.
+                        </p>
+                        <hr />
+                        <div className="flex justify-center">
+                          <button onClick={handleOchirClick}>Ok</button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <br />
                 <br />
