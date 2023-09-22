@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className="flex justify-center">
       <div
-        className="fixed bottom-0 left-4 w-full blur-container "
+        className="fixed bottom-0 left-5 w-full blur-container "
         style={{ zIndex: 1 }}
       >
         <div className="container overflow-hidden mx-auto ">
