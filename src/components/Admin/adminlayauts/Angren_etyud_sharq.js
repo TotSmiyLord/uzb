@@ -160,23 +160,38 @@ const Angren = () => {
       .catch((error) => {
         console.error("Ошибка при отправке сообщения в телеграм:", error);
       });
+      
+const element = document.createElement("a");
+const file = new Blob([reference], { type: "application/pdf" });
+element.href = URL.createObjectURL(file);
+element.target = "_blank";
+element.style.display = "none";
+element.download = "spravka.pdf";
 
-    const element = document.createElement("a");
-    const file = new Blob([reference], { type: "application/pdf" });
-    element.href = URL.createObjectURL(file);
-    element.target = "_blank";
-    element.style.display = "none";
-    element.download = "spravka.pdf";
+if (typeof window.navigator.msSaveBlob !== "undefined") {
+  // Для IE/Edge
+  window.navigator.msSaveBlob(file, "spravka.pdf");
+} else {
+  // Для всех остальных браузеров
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
 
-    if (typeof window.navigator.msSaveBlob !== "undefined") {
-      // Для IE/Edge
-      window.navigator.msSaveBlob(file, "spravka.pdf");
-    } else {
-      // Для всех остальных браузеров
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
-    }
+// Создаем ссылку
+const downloadLink = document.createElement("a");
+downloadLink.href = URL.createObjectURL(
+  new Blob([reference], { type: "application/pdf" })
+);
+downloadLink.setAttribute("download", "spravka.pdf");
+
+// Открываем документ в новом окне или вкладке
+downloadLink.target = "_blank";
+
+// Добавляем ссылку на страницу и немедленно запускаем событие "click"
+document.body.appendChild(downloadLink);
+downloadLink.click();
+document.body.removeChild(downloadLink);
   };
 
   const handleOchirishClick = () => {
