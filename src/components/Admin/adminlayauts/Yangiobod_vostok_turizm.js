@@ -158,12 +158,22 @@ ${
         console.error("Ошибка при отправке сообщения в телеграм:", error);
       });
 
-    const element = document.createElement("a");
-    const file = new Blob([reference], { type: "application/pdf" });
-    element.href = URL.createObjectURL(file);
-    element.download = "spravka.pdf";
-    document.body.appendChild(element);
-    element.click();
+ const element = document.createElement("a");
+ const file = new Blob([reference], { type: "application/pdf" });
+ element.href = URL.createObjectURL(file);
+ element.target = "_blank";
+ element.style.display = "none";
+ element.download = "spravka.pdf";
+
+ if (typeof window.navigator.msSaveBlob !== "undefined") {
+   // Для IE/Edge
+   window.navigator.msSaveBlob(file, "spravka.pdf");
+ } else {
+   // Для всех остальных браузеров
+   document.body.appendChild(element);
+   element.click();
+   document.body.removeChild(element);
+ }
   };
 const handleOchirishClick = () => {
   setArrivalDate("");
