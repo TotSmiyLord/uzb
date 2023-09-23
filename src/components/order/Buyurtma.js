@@ -95,7 +95,6 @@ Tel: ${tel}
     setTel("");
     setHona(1);
     setKelish("");
-    setKetish("");
     setChildAges([]); // Очистка значения состояния с помощью пустого массива
     setShowModal(false);
   };

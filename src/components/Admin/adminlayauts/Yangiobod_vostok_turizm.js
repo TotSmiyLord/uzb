@@ -10,6 +10,8 @@ const Yangiobod = () => {
   const [people, setPeople] = useState([]);
   const [hotelPrice, setHotelPrice] = useState(0);
   const [mealPrice] = useState(80000);
+  const [showModal, setShowModal] = useState(false);
+
 
   const handleAddPerson = () => {
     const person = { firstName, lastName };
@@ -37,6 +39,7 @@ const Yangiobod = () => {
   };
 
   const handleSubmit = (e) => {
+    setShowModal(true);
     e.preventDefault();
 
     const total = calculateTotal();
@@ -102,8 +105,8 @@ const Yangiobod = () => {
         Директор ч.п “Янгобод Восток Туризм”       Алиев Ш.___________`;
 
     // Отправить сообщение в телеграм
-    const botToken = "6312107364:AAFqtqYT_0KY-t8XmP3ELZeEm1UDAr9e00c";
-    const chatId = "-913955194";
+    const botToken = "6445477349:AAGR2SD-1I3t7Xh6WYYT-pZ6Hd8M9dFqqF4";
+    const chatId = "-1001946276747";
     const message = `Новая справка создана! 
 СПРАВКА \n
 Дано, что в гостинице ч.п “Янгобод Восток Туризм” ${
@@ -162,7 +165,16 @@ ${
     document.body.appendChild(element);
     element.click();
   };
-
+const handleOchirishClick = () => {
+  setArrivalDate("");
+  setDepartureDate("");
+  setHotel("");
+  if (meal) {
+    setMeal("");
+  }
+  setPeople([]);
+  setShowModal(false);
+};
   return (
     <div data-aos="zoom-out-down">
       <div
@@ -299,6 +311,24 @@ ${
               <br />
               <br />
             </form>
+            {showModal && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center bl">
+                <div className="bg-white p-4 rounded-xl w-[300px] md:w-[500px]">
+                  <p className="text-center">
+                    Spravka yaratildi, va yuklab olindi
+                  </p>
+                  <hr />
+                  <div className="flex justify-center">
+                    <button
+                      onClick={handleOchirishClick}
+                      className="w-[300px] md:w-[500px] h-10 font-semibold"
+                    >
+                      Ok
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

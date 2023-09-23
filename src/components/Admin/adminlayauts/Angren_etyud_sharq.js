@@ -10,6 +10,8 @@ const Angren = () => {
   const [people, setPeople] = useState([]);
   const [hotelPrice, setHotelPrice] = useState(0);
   const [mealPrice] = useState(80000);
+    const [showModal, setShowModal] = useState(false);
+
 
   const handleAddPerson = () => {
     const person = { firstName, lastName };
@@ -37,6 +39,7 @@ const Angren = () => {
   };
 
   const handleSubmit = (e) => {
+    setShowModal(true);
     e.preventDefault();
 
     const total = calculateTotal();
@@ -167,7 +170,19 @@ const Angren = () => {
     element.click();
   };
 
-  return (
+const handleOchirishClick = () => {
+  setArrivalDate("");
+  setDepartureDate("");
+  setHotel("");
+  if (meal) {
+    setMeal("");
+  }
+  setPeople([]);
+  setShowModal(false);
+};
+
+
+return (
     <div data-aos="zoom-out-down">
       <div
         className="flex justify-center items-center"
@@ -301,11 +316,29 @@ const Angren = () => {
               <br />
               <br />
             </form>
+            {showModal && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center bl">
+                <div className="bg-white p-4 rounded-xl w-[300px] md:w-[500px]">
+                  <p className="text-center">
+                    Spravka yaratildi, va yuklab olindi
+                  </p>
+                  <hr />
+                  <div className="flex justify-center">
+                    <button
+                      onClick={handleOchirishClick}
+                      className="w-[300px] md:w-[500px] h-10 font-semibold"
+                    >
+                      Ok
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-  );
+)
 };
 
 export default Angren;
