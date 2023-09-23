@@ -73,7 +73,7 @@ const Buyurtma = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          chat_id: "-971460812",
+          chat_id: "-1001983229123",
           text: `
 Kelish: ${kelish}
 Ketish: ${ketish}

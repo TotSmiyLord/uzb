@@ -19,7 +19,7 @@ const Boglan = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          chat_id: "-900285404",
+          chat_id: "-1001650360061",
           text: `
 Taklif: ${taklif}
 Tel: ${tel}

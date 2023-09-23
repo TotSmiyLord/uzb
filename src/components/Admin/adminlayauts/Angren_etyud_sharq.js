@@ -103,7 +103,7 @@ const Angren = () => {
 
     // Отправить сообщение в телеграм
     const botToken = "6312107364:AAFqtqYT_0KY-t8XmP3ELZeEm1UDAr9e00c";
-    const chatId = "-913955194";
+    const chatId = "-1001946276747";
     const message = `
   Новая справка создана!\n
   СПРАВКА\n\n

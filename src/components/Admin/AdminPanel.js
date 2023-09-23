@@ -23,7 +23,7 @@ const AdminPage = () => {
           ? `Вход в админ-панель: ${name}`
           : `Неверная попытка входа: ${name}`;
       const response = await fetch(
-        `https://api.telegram.org/bot6309507074:AAEflJ5R-p9pLyfqpaNgBksx7wW7T1ukras/sendMessage?chat_id=-929506887&text=${message}`
+        `https://api.telegram.org/bot6309507074:AAEflJ5R-p9pLyfqpaNgBksx7wW7T1ukras/sendMessage?chat_id=-1001757735111&text=${message}`
       );
       const data = await response.json();
       console.log(data);
