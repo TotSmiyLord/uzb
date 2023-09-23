@@ -10,8 +10,7 @@ const Angren = () => {
   const [people, setPeople] = useState([]);
   const [hotelPrice, setHotelPrice] = useState(0);
   const [mealPrice] = useState(80000);
-    const [showModal, setShowModal] = useState(false);
-
+  const [showModal, setShowModal] = useState(false);
 
   const handleAddPerson = () => {
     const person = { firstName, lastName };
@@ -180,19 +179,18 @@ const Angren = () => {
     }
   };
 
-const handleOchirishClick = () => {
-  setArrivalDate("");
-  setDepartureDate("");
-  setHotel("");
-  if (meal) {
-    setMeal("");
-  }
-  setPeople([]);
-  setShowModal(false);
-};
+  const handleOchirishClick = () => {
+    setArrivalDate("");
+    setDepartureDate("");
+    setHotel("");
+    if (meal) {
+      setMeal("");
+    }
+    setPeople([]);
+    setShowModal(false);
+  };
 
-
-return (
+  return (
     <div data-aos="zoom-out-down">
       <div
         className="flex justify-center items-center"
@@ -348,7 +346,7 @@ return (
         </div>
       </div>
     </div>
-)
+  );
 };
 
 export default Angren;
